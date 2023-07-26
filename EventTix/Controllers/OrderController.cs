@@ -27,7 +27,6 @@ namespace EventTix.Controllers
         public ActionResult<List<OrderDto>> getAllOrders()
         {
             var dtoOrders = _orderRepository.GetOrders().Select(_mapper.Map<OrderDto>);
-            dtoOrders.Select(e => e.EventName = _eventRepository.GetEventById(e.EventId).EventName);
             return Ok(dtoOrders);
 
         }
