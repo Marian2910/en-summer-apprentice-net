@@ -12,6 +12,7 @@ namespace EventTix.Repositories
         {
             _dbContext = dbContext;
         }
+
         public async Task<TicketCategory> GetTicketCategoryByDescriptionAndEvent(string description, int eventId)
         {
             var @ticketCategory = await _dbContext.TicketCategories.Where(e => (e.Description == description && e.EventId == eventId)).FirstOrDefaultAsync();

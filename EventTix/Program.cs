@@ -17,8 +17,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IEventRepository, EventRepository>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 builder.Services.AddTransient<ITicketCategoryRepository, TicketCategoryRepository>();
-builder.Services.AddSingleton<ITestService, TestService>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 
 builder.Services.AddDbContext<PracticaContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PracticaConnection")));

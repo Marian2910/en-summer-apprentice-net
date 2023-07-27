@@ -10,4 +10,3 @@ namespace EventTix.Models.Dto
         public string EventDescription { get; set; } = string.Empty;
     }
 }
-
