@@ -1,6 +1,7 @@
 ﻿using System;
 using EventTix.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace EventTix.Repositories
 {
@@ -18,16 +19,16 @@ namespace EventTix.Repositories
             throw new NotImplementedException();
         }
 
-        public int Delete(int id)
+        public void Delete(Order @order)
         {
-            throw new NotImplementedException();
+            _dbContext.Remove(@order);
+            _dbContext.SaveChanges();
         }
 
-        public Order GetOrderById(int id)
+        public async Task<Order> GetOrderById(int id)
         {
-            var order = _dbContext.Orders.Include(e => e.Customer).Include(e => e.TicketCategory).SingleOrDefault(e => e.OrderId == id);
-            return order;
-
+            var @order = await _dbContext.Orders.Include(e => e.Customer).Include(e => e.TicketCategory).Where(e => e.OrderId == id).FirstOrDefaultAsync();
+            return @order;
         }
 
         public IEnumerable<Order> GetOrders()
@@ -36,9 +37,10 @@ namespace EventTix.Repositories
             return orders;
         }
 
-        public void Update(Order order)
+        public void Update(Order @order)
         {
-            throw new NotImplementedException();
+            _dbContext.Entry(@order).State = EntityState.Modified;
+            _dbContext.SaveChanges();
         }
     }
 }

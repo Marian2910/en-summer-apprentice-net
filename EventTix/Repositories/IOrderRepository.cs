@@ -7,13 +7,13 @@ namespace EventTix.Repositories
     {
         IEnumerable<Order> GetOrders();
 
-        Order GetOrderById(int id);
+        Task<Order> GetOrderById(int id);
 
         int Add(Order @order);
 
         void Update(Order @order);
 
-        int Delete(int id);
+        void Delete(Order @order);
 
     }
 }

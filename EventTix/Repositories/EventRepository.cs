@@ -16,14 +16,15 @@ namespace EventTix.Repositories
             throw new NotImplementedException();
         }
 
-        public int Delete(int id)
+        public void Delete(Event @event)
         {
-            throw new NotImplementedException();
+            _dbContext.Remove(@event);
+            _dbContext.SaveChanges();
         }
 
-        public Event GetEventById(int id)
+        public async Task<Event> GetEventById(int id)
         {
-            var @event = _dbContext.Events.Include(e=>e.EventType).Include(e=>e.Venue).SingleOrDefault(e => e.EventId == id);
+            var @event = await _dbContext.Events.Include(e=>e.EventType).Include(e=>e.Venue).Where(e => e.EventId == id).FirstOrDefaultAsync();
             return @event;
         }
 
@@ -35,7 +36,8 @@ namespace EventTix.Repositories
 
         public void Update(Event @event)
         {
-            throw new NotImplementedException();
+            _dbContext.Entry(@event).State = EntityState.Modified;
+            _dbContext.SaveChanges();
         }
     }
 }

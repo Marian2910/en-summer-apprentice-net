@@ -4,6 +4,7 @@ using EventTix.Models;
 using EventTix.Models.Dto;
 using EventTix.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EventTix.Controllers 
 {
@@ -14,12 +15,13 @@ namespace EventTix.Controllers
 
         private readonly IOrderRepository _orderRepository;
         private readonly IEventRepository _eventRepository;
+        private readonly ITicketCategoryRepository _ticketCategoryRepository;
         private readonly IMapper _mapper;
-
-        public OrderController(IOrderRepository orderRepository, IEventRepository eventRepository, IMapper mapper)
+        public OrderController(IOrderRepository orderRepository, IEventRepository eventRepository, ITicketCategoryRepository ticketCategoryRepository, IMapper mapper)
         {
             _orderRepository = orderRepository;
             _eventRepository = eventRepository;
+            _ticketCategoryRepository = ticketCategoryRepository;
             _mapper = mapper;
         }
 
@@ -32,18 +34,57 @@ namespace EventTix.Controllers
         }
 
         [HttpGet]
-        public ActionResult<OrderDto> getById(int id)
+        public async Task<ActionResult<OrderDto>> getById(int id)
         {
-            var @order = _orderRepository.GetOrderById(id);
+            var @order = await _orderRepository.GetOrderById(id);
+
             if (@order == null)
             {
                 return NotFound();
             }
 
             var orderDto = _mapper.Map<OrderDto>(@order);
-            orderDto.EventName = _eventRepository.GetEventById(@order.TicketCategory.EventId)?
-                                                 .EventName ?? string.Empty;
+            var @event = await _eventRepository.GetEventById(@order.TicketCategory.EventId);
+
+            orderDto.EventName = @event?.EventName ?? string.Empty;
+
             return Ok(orderDto);
+        }
+
+        [HttpPatch]
+        public async Task<ActionResult<OrderPatchDto>> Patch(OrderPatchDto orderPatch)
+        {
+            var orderEntity = await _orderRepository.GetOrderById(orderPatch.OrderId);
+
+            if (orderEntity == null)
+            {
+                return NotFound();
+            }
+
+            var @event = await _eventRepository.GetEventById(orderEntity.TicketCategory.EventId);
+            var ticketCategory = await _ticketCategoryRepository.GetTicketCategoryByDescriptionAndEvent(orderPatch.TicketCategory, @event.EventId);
+
+            if (!orderPatch.TicketCategory.IsNullOrEmpty()) orderEntity.TicketCategoryId = ticketCategory.TicketCategoryId;
+
+            orderEntity.OrderedAt = DateTime.Now;
+            orderEntity.NumberOfTickets = orderPatch.NumberOfTickets;
+            orderEntity.TotalPrice = (orderPatch.NumberOfTickets * ticketCategory.Price);
+            _orderRepository.Update(orderEntity);
+
+            return NoContent();
+
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var orderEntity = await _orderRepository.GetOrderById(id);
+            if (orderEntity == null)
+            {
+                return NotFound();
+            }
+            _orderRepository.Delete(orderEntity);
+            return NoContent();
         }
     }
 }

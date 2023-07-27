@@ -3,6 +3,7 @@ using EventTix.Models;
 using EventTix.Models.Dto;
 using EventTix.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EventTix.Controllers
 {
@@ -28,9 +29,9 @@ namespace EventTix.Controllers
 		}
 
 		[HttpGet]
-		public ActionResult<EventDto> getById(int id)
+		public async Task<ActionResult<EventDto>> getById(int id)
 		{
-			var @event = _eventRepository.GetEventById(id);
+			var @event = await _eventRepository.GetEventById(id);
 			if(@event == null )
 			{
 				return NotFound();
@@ -39,6 +40,32 @@ namespace EventTix.Controllers
 			var eventDto = _mapper.Map<EventDto>(@event);
             return Ok(eventDto);
 		}
+		[HttpPatch]
+		public async Task<ActionResult<EventPatchDto>> Patch(EventPatchDto eventPatch)
+		{
+			var eventEntity = await _eventRepository.GetEventById(eventPatch.EventId);
+			if (eventEntity == null)
+			{
+				return NotFound();
+			}
+
+            if (!eventPatch.EventName.IsNullOrEmpty()) eventEntity.EventName = eventPatch.EventName;
+            if (!eventPatch.EventDescription.IsNullOrEmpty()) eventEntity.EventDescription = eventPatch.EventDescription;
+            _eventRepository.Update(eventEntity);
+			return NoContent();
+
+		}
+		[HttpDelete]
+		public async Task<ActionResult> Delete(int id)
+		{
+            var eventEntity = await _eventRepository.GetEventById(id);
+            if (eventEntity == null)
+            {
+                return NotFound();
+            }
+			_eventRepository.Delete(eventEntity);
+			return NoContent();
+        }
 	}
 }
 
