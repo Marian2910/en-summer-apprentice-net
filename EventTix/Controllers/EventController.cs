@@ -40,6 +40,7 @@ namespace EventTix.Controllers
 			var eventDto = _mapper.Map<EventDto>(@event);
             return Ok(eventDto);
 		}
+
 		[HttpPatch]
 		public async Task<ActionResult<EventPatchDto>> Patch(EventPatchDto eventPatch)
 		{
@@ -55,6 +56,7 @@ namespace EventTix.Controllers
 			return NoContent();
 
 		}
+
 		[HttpDelete]
 		public async Task<ActionResult> Delete(int id)
 		{
