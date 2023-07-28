@@ -11,8 +11,8 @@ namespace EventTix.Profiles
 		{
             CreateMap<Order, OrderDto>()
           .ForMember(dest => dest.CustomerName, opt => opt.MapFrom(src => src.Customer.CustomerName))
-          .ForMember(dest => dest.TicketCategory, opt => opt.MapFrom(src => src.TicketCategory.Description))
-          .ForMember(dest => dest.EventName, opt => opt.MapFrom(src => src.TicketCategory.Event.EventName)).ReverseMap();
+          .ForMember(dest => dest.TicketCategory, opt => opt.MapFrom(src => src.TicketCategory.Description)).ReverseMap();
+          //.ForMember(dest => dest.EventName, opt => opt.MapFrom(src => src.TicketCategory.Event.EventName))
             CreateMap<Order, OrderPatchDto>().ReverseMap();
         }
     }

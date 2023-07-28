@@ -33,10 +33,6 @@ namespace EventTix.Controllers
         {
             var @order = await _orderService.GetById(id);
 
-            if (@order == null)
-            {
-                return NotFound();
-            }
             return Ok(@order);
         }
 

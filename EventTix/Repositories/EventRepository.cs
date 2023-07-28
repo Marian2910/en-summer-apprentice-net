@@ -1,5 +1,6 @@
 ﻿using EventTix.Models;
 using Microsoft.EntityFrameworkCore;
+using TMS.Api.Exceptions;
 
 namespace EventTix.Repositories
 {
@@ -24,7 +25,11 @@ namespace EventTix.Repositories
 
         public async Task<Event> GetEventById(int id)
         {
-            var @event = await _dbContext.Events.Include(e=>e.EventType).Include(e=>e.Venue).Where(e => e.EventId == id).FirstOrDefaultAsync();
+            var @event = await _dbContext.Events
+                                         .Include(e=>e.EventType)
+                                         .Include(e=>e.Venue)
+                                         .Where(e => e.EventId == id)
+                                         .FirstOrDefaultAsync() ?? throw new EntityNotFoundException(id, nameof(Event));
             return @event;
         }
 

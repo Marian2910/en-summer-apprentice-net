@@ -16,7 +16,8 @@ namespace EventTix.Services
         private readonly IMapper _mapper;
 
 
-        public OrderService(IOrderRepository orderRepository,IEventRepository eventRepository, ITicketCategoryRepository ticketCategoryRepository, IMapper mapper)
+        public OrderService(IOrderRepository orderRepository,IEventRepository eventRepository,
+                            ITicketCategoryRepository ticketCategoryRepository, IMapper mapper)
         {
             _orderRepository = orderRepository;
             _eventRepository = eventRepository;
@@ -24,10 +25,11 @@ namespace EventTix.Services
             _mapper = mapper;
         }
 
-    public List<OrderDto> GetAll()
+        public List<OrderDto> GetAll()
         {
-            return _orderRepository.GetOrders().Select(_mapper.Map<OrderDto>).ToList();
-
+            var orders = _orderRepository.GetOrders().Select(_mapper.Map<OrderDto>).ToList();
+            
+            return orders;
         }
 
         public async Task<OrderDto> GetById(int id)
@@ -36,7 +38,6 @@ namespace EventTix.Services
             var orderDto = _mapper.Map<OrderDto>(@order);
             var @event = await _eventRepository.GetEventById(@order.TicketCategory.EventId);
             orderDto.EventName = @event?.EventName ?? string.Empty;
-
 
             return orderDto;
         }

@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore; 
 using EventTix.Models;
 using EventTix.Services;
+using NLog.Web;
+using TMS.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,9 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
 
 builder.Services.AddTransient<IEventRepository, EventRepository>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
@@ -33,7 +38,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 app.UseAuthorization();
 app.MapControllers();
 

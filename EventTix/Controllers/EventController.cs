@@ -12,16 +12,26 @@ namespace EventTix.Controllers
 	public class EventController : ControllerBase
     {
 		private readonly IEventService _eventService;
+        private readonly ILogger _logger;
 
-        public EventController(IEventService eventService)
+        public EventController(IEventService eventService, ILogger<EventController> logger)
 		{
             _eventService = eventService;
+            _logger = logger;
 		}
 
 		[HttpGet]
 		public ActionResult<List<EventDto>> GetAllEvents()
 		{
-			return Ok(_eventService.GetAll());
+            try
+            {
+                return Ok(_eventService.GetAll());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return BadRequest(ex.Message);
+            }
 
 		}
 
@@ -29,16 +39,14 @@ namespace EventTix.Controllers
         public async Task<ActionResult<EventDto>> GetEventById(int id)
         {
             var @event = await _eventService.GetById(id);
-            if (@event == null)
-            {
-                return NotFound();
-            }
             return Ok(@event);
+
         }
 
         [HttpPatch]
         public async Task<ActionResult<Event>> Patch(EventPatchDto eventPatch)
         {
+            if (eventPatch == null) throw new ArgumentNullException(nameof(eventPatch));
             var updatedEvent = await _eventService.Patch(eventPatch);
             if (updatedEvent == null)
                 return NotFound();

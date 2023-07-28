@@ -1,6 +1,7 @@
 ﻿using System;
 using EventTix.Models;
 using Microsoft.EntityFrameworkCore;
+using TMS.Api.Exceptions;
 
 namespace EventTix.Repositories
 {
@@ -15,8 +16,16 @@ namespace EventTix.Repositories
 
         public async Task<TicketCategory> GetTicketCategoryByDescriptionAndEvent(string description, int eventId)
         {
-            var @ticketCategory = await _dbContext.TicketCategories.Where(e => (e.Description == description && e.EventId == eventId)).FirstOrDefaultAsync();
+            var @ticketCategory = await _dbContext.TicketCategories
+                                                  .Where(t => t.Description == description && t.EventId == eventId)
+                                                  .FirstOrDefaultAsync() ?? throw new EntityNotFoundException(description);
                 return @ticketCategory;
+        }
+
+        public async Task<TicketCategory> GetTicketCategoryById(int id)
+        {
+            var ticketCategory = await _dbContext.TicketCategories.Where(t => t.TicketCategoryId == id).FirstOrDefaultAsync() ?? throw new EntityNotFoundException(id, nameof(TicketCategory));
+            return ticketCategory;
         }
     }
 }

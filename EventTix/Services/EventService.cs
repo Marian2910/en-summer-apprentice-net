@@ -3,7 +3,6 @@ using AutoMapper;
 using EventTix.Models;
 using EventTix.Models.Dto;
 using EventTix.Repositories;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
 namespace EventTix.Services
