@@ -1,5 +1,4 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using EventTix.Models;
 using EventTix.Models.Dto;
 using EventTix.Repositories;
@@ -47,7 +46,7 @@ namespace EventTix.Services
             var orderEntity = await _orderRepository.GetOrderById(orderPatch.OrderId);
 
             var @event = await _eventRepository.GetEventById(orderEntity.TicketCategory.EventId);
-            var ticketCategory = await _ticketCategoryRepository.GetTicketCategoryByDescriptionAndEvent(orderPatch.TicketCategory, @event.EventId);
+            var ticketCategory = await _ticketCategoryRepository.GetTicketCategoryByDescriptionAndEventId(orderPatch.TicketCategory, @event.EventId);
 
             if (!orderPatch.TicketCategory.IsNullOrEmpty()) orderEntity.TicketCategoryId = ticketCategory.TicketCategoryId;
 

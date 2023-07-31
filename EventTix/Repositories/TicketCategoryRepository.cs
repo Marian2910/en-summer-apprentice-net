@@ -1,5 +1,4 @@
-﻿using System;
-using EventTix.Models;
+﻿using EventTix.Models;
 using Microsoft.EntityFrameworkCore;
 using TMS.Api.Exceptions;
 
@@ -14,7 +13,7 @@ namespace EventTix.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<TicketCategory> GetTicketCategoryByDescriptionAndEvent(string description, int eventId)
+        public async Task<TicketCategory> GetTicketCategoryByDescriptionAndEventId(string description, int eventId)
         {
             var @ticketCategory = await _dbContext.TicketCategories
                                                   .Where(t => t.Description == description && t.EventId == eventId)

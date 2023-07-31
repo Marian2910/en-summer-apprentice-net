@@ -1,9 +1,7 @@
-﻿using AutoMapper;
-using EventTix.Models;
+﻿using EventTix.Models;
 using EventTix.Models.Dto;
 using EventTix.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 
 namespace EventTix.Controllers
 {

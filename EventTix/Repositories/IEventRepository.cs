@@ -1,5 +1,4 @@
-﻿using System;
-using EventTix.Models;
+﻿using EventTix.Models;
 
 namespace EventTix.Repositories
 {

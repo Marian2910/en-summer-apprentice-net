@@ -1,7 +1,5 @@
-﻿using System;
-using EventTix.Models;
+﻿using EventTix.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using TMS.Api.Exceptions;
 
 namespace EventTix.Repositories

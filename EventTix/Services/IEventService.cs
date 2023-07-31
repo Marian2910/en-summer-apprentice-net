@@ -1,8 +1,5 @@
-﻿using System;
-using AutoMapper;
-using EventTix.Models;
+﻿using EventTix.Models;
 using EventTix.Models.Dto;
-using EventTix.Repositories;
 
 namespace EventTix.Services
 {
