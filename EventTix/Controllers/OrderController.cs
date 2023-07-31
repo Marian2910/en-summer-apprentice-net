@@ -1,8 +1,5 @@
-﻿using System;
-using AutoMapper;
-using EventTix.Models;
-using EventTix.Models.Dto;
-using EventTix.Repositories;
+﻿using EventTix.Models.Dto;
+using EventTix.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventTix.Controllers 
@@ -12,38 +9,48 @@ namespace EventTix.Controllers
     public class OrderController : ControllerBase
     {
 
-        private readonly IOrderRepository _orderRepository;
-        private readonly IEventRepository _eventRepository;
-        private readonly IMapper _mapper;
+        private readonly IOrderService _orderService;
 
-        public OrderController(IOrderRepository orderRepository, IEventRepository eventRepository, IMapper mapper)
+        public OrderController(IOrderService orderService)
         {
-            _orderRepository = orderRepository;
-            _eventRepository = eventRepository;
-            _mapper = mapper;
+            _orderService = orderService;
         }
 
         [HttpGet]
-        public ActionResult<List<OrderDto>> getAllOrders()
+        public ActionResult<List<OrderDto>> GetAllOrders()
         {
-            var dtoOrders = _orderRepository.GetOrders().Select(_mapper.Map<OrderDto>);
-            return Ok(dtoOrders);
+            return Ok(_orderService.GetAll());
 
         }
 
         [HttpGet]
-        public ActionResult<OrderDto> getById(int id)
+        public async Task<ActionResult<OrderDto>> GetById(int id)
         {
-            var @order = _orderRepository.GetOrderById(id);
-            if (@order == null)
-            {
+            var @order = await _orderService.GetById(id);
+
+            return Ok(@order);
+        }
+
+        [HttpPatch]
+        public async Task<ActionResult<OrderPatchDto>> Patch(OrderPatchDto orderPatch)
+        {
+
+            var updatedOrder = await _orderService.Patch(orderPatch);
+            if (updatedOrder == null)
                 return NotFound();
-            }
 
-            var orderDto = _mapper.Map<OrderDto>(@order);
-            orderDto.EventName = _eventRepository.GetEventById(@order.TicketCategory.EventId)?
-                                                 .EventName ?? string.Empty;
-            return Ok(orderDto);
+            return NoContent();
+
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var deletedOrder = await _orderService.Delete(id);
+            if (deletedOrder == null)
+                return NotFound();
+
+            return NoContent();
         }
     }
 }

@@ -1,0 +1,88 @@
+2023-07-28 12:04:50.2372 Info Message Template Auto Format enabled
+2023-07-28 12:04:50.2752 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:04:50.2761 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:04:50.2761 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:04:50.3149 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:04:50.3221 Info Configuration initialized.
+2023-07-28 12:04:50.3349 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:04:50.3349 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:06:44.4063 Info Message Template Auto Format enabled
+2023-07-28 12:06:44.4723 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:06:44.4751 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:06:44.4757 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:06:44.5287 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:06:44.5404 Info Configuration initialized.
+2023-07-28 12:06:44.5645 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:06:44.5651 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:09:02.3128 Info Message Template Auto Format enabled
+2023-07-28 12:09:02.3517 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:09:02.3527 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:09:02.3527 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:09:02.3939 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:09:02.4014 Info Configuration initialized.
+2023-07-28 12:09:02.4190 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:09:02.4190 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:09:29.1218 Info Message Template Auto Format enabled
+2023-07-28 12:09:29.1601 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:09:29.1611 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:09:29.1614 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:09:29.2032 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:09:29.2110 Info Configuration initialized.
+2023-07-28 12:09:29.2236 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:09:29.2236 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:31:45.0802 Info Message Template Auto Format enabled
+2023-07-28 12:31:45.1189 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:31:45.1199 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:31:45.1202 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:31:45.1579 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:31:45.1651 Info Configuration initialized.
+2023-07-28 12:31:45.1789 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:31:45.1793 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:39:31.8907 Info Message Template Auto Format enabled
+2023-07-28 12:39:31.9300 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:39:31.9311 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:39:31.9314 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:39:31.9686 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:39:31.9761 Info Configuration initialized.
+2023-07-28 12:39:31.9902 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:39:31.9906 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:40:38.2493 Info Message Template Auto Format enabled
+2023-07-28 12:40:38.2881 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:40:38.2890 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:40:38.2890 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:40:38.3290 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:40:38.3361 Info Configuration initialized.
+2023-07-28 12:40:38.3526 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:40:38.3530 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:48:02.9771 Info Message Template Auto Format enabled
+2023-07-28 12:48:03.0156 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:48:03.0167 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:48:03.0170 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:48:03.0542 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:48:03.0618 Info Configuration initialized.
+2023-07-28 12:48:03.0762 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:48:03.0762 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:50:13.0256 Info Message Template Auto Format enabled
+2023-07-28 12:50:13.0644 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:50:13.0654 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:50:13.0654 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:50:13.1027 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:50:13.1099 Info Configuration initialized.
+2023-07-28 12:50:13.1227 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:50:13.1230 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:58:15.8982 Info Message Template Auto Format enabled
+2023-07-28 12:58:15.9391 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-28 12:58:15.9402 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-28 12:58:15.9404 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-28 12:58:15.9784 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-28 12:58:15.9858 Info Configuration initialized.
+2023-07-28 12:58:15.9987 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-28 12:58:15.9987 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-31 14:32:43.3153 Info Message Template Auto Format enabled
+2023-07-31 14:32:43.3559 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-07-31 14:32:43.3570 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-07-31 14:32:43.3574 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-07-31 14:32:43.3939 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config
+2023-07-31 14:32:43.4013 Info Configuration initialized.
+2023-07-31 14:32:43.4151 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-31 14:32:43.4155 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=/Users/marianmutu/Documents/Endava/NET/en-summer-apprentice-net/EventTix/EventTix/bin/Debug/net7.0/NLog.config

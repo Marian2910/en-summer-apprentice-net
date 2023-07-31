@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace EventTix.Models;
+﻿namespace EventTix.Models;
 
 public partial class Event
 {

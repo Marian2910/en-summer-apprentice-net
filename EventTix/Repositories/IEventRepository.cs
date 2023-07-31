@@ -1,5 +1,4 @@
-﻿using System;
-using EventTix.Models;
+﻿using EventTix.Models;
 
 namespace EventTix.Repositories
 {
@@ -7,13 +6,13 @@ namespace EventTix.Repositories
 	{
 		IEnumerable<Event> GetEvents();
 
-		Event GetEventById(int id);
+		Task<Event> GetEventById(int id);
 
 		int Add(Event @event);
 
 		void Update(Event @event);
 
-		int Delete(int id);
+		void Delete(Event @event);
 
 	}
 }
