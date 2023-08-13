@@ -27,8 +27,12 @@ namespace EventTix.Services
         public List<OrderDto> GetAll()
         {
             var orders = _orderRepository.GetOrders().Select(_mapper.Map<OrderDto>).ToList();
-            
-            return orders;
+
+            foreach (var order in orders)
+            {
+                order.EventName = GetById(order.OrderId).Result.EventName;
+            }
+                return orders;
         }
 
         public async Task<OrderDto> GetById(int id)

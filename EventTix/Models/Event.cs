@@ -16,6 +16,8 @@ public partial class Event
 
     public DateTime EndDate { get; set; }
 
+    public string Image { get; set; } = null!;
+
     public virtual EventType? EventType { get; set; } = null!;
 
     public virtual ICollection<TicketCategory> TicketCategories { get; set; } = new List<TicketCategory>();

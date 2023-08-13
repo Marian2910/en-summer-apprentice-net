@@ -11,5 +11,8 @@
         public string EventType { get; set; } = string.Empty;
 
         public string Venue { get; set; } = string.Empty;
+
+        public string Image { get; set; } = null!;
+
     }
 }
